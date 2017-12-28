@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+body{
+  background: #333;
+  color: #fff;
+}
+h1{
+  color: #fff;
+  font-family: 'Berkshire Swash', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
