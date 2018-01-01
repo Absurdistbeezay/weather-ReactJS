@@ -27,6 +27,7 @@ class Weather extends Component {
                 icon: data.current_observation.icon_url,
                 tempF: Math.round(data.current_observation.temp_f),
                 tempC: Math.round(data.current_observation.temp_c),
+                tempFnew: Math.round(data.current_observation.temp_f),
                 //    windMPH: data.current_observation.wind_mph,
                 //    precipitation: data.current_observation.precip_today_metric,
                 errorMsg: '',
@@ -45,6 +46,7 @@ class Weather extends Component {
                 
             });
         }.bind(this));
+     
     }
     handleClick() {
     
@@ -58,33 +60,35 @@ class Weather extends Component {
                     tempF: this.state.tempC
                 });
             }
-            if(this.state.color === 'rgb(73, 35, 223)' && this.state.col==='rgb(251, 106, 106)'){
+             if(this.state.color === 'rgb(73, 35, 223)' && this.state.col==='rgb(251, 106, 106)'){
                 this.setState({
                     color:'rgb(251, 106, 106)',
                     col:'rgb(73, 35, 223)',
-                    tempF: this.state.tempF
+                    tempF: this.state.tempFnew
                 });
             }  
+            console.log(this.state.tempF);
 
     }
     render() {
-        let degree = this.state.tempF;
+      
         return (
 
             <div className = "container" >
 
                 <div className="weather-status">{this.state.weather}</div>
                 <div className="weather-img"><img src={this.state.icon} alt="weather"></img></div>
-                <div className="degree">{degree}</div>
+                <div className="degree">{this.state.tempF}°</div>
 
 
-                <div className="far-toggle degree-metrics"><a onClick={this.handleClick} style={{color:this.state.color}}>Fahrenheit</a></div>
+                <div className="far-toggle degree-metrics"><a onClick={this.handleClick} style={{color:this.state.color}} >Fahrenheit</a></div>
                 |
                 <div className="celsius-toggle degree-metrics"><a onClick={this.handleClick} style={{color:this.state.col}}>Celsius</a></div>
 
                 <div className="location">Your Location: {this.state.location}</div>
                 <div className="date">{this.state.date}</div>
-            </div > 
+            
+           </div>
 
         );
     }
