@@ -1,6 +1,6 @@
 
 .container{
-   
+    background: #edf0f0;
     border: solid 2px #b6edf7;
     width: 70%;
     margin: auto;
@@ -13,7 +13,7 @@ img{
 }
 
 .weather-status{
-    color: rgb(251, 106, 106);
+    color: #535353;
     font-size: 30px;
     padding-bottom: 20px;
     text-transform: capitalize;
@@ -29,7 +29,7 @@ margin: auto;
 }
 
 .degree{
-    color: #fff;
+    color: #535353;
     font-size: 30px;
     letter-spacing: 3px; 
     margin: 15px;
@@ -48,19 +48,25 @@ margin: auto;
     letter-spacing: 1px;
 }
 .far-toggle{
-    color: rgb(251, 106, 106);
+    color: #535353;
     cursor: pointer;
 }
 .location{
-    color: rgb(251, 106, 106);
+    color: #535353;
     margin-top: 20px;
     letter-spacing: 1px;
 }
 .date{
     margin-top: 20px;
-    color: #d8c9c9;
+    color: #535353;
     letter-spacing: 1px;
     font-style: italic;
 
 }
 
+@media(min-width: 1200px){
+    .container{
+        margin: auto;
+        width: 40%;
+    }
+}

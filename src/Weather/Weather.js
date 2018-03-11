@@ -7,8 +7,8 @@ class Weather extends Component {
         super();
         this.state = {
             url: `http://api.wunderground.com/api/${Api.key}/conditions/q/newyork,ny.json`,
-            color:'rgb(251, 106, 106)',
-            col: 'rgb(73, 35, 223)'
+            color:'#535353',
+            col: '#dad3d3'
         }
         this.getData = this.getData.bind(this);
         this.handleClick=this.handleClick.bind(this);
@@ -35,6 +35,7 @@ class Weather extends Component {
             });
         }.bind(this));
     }
+    
     componentDidMount() {
         this.getData();
         
@@ -53,22 +54,21 @@ class Weather extends Component {
         // console.log(url);
        
       
-            if(this.state.color === 'rgb(251, 106, 106)' && this.state.col==='rgb(73, 35, 223)'){
+            if(this.state.color === '#535353' && this.state.col==='#dad3d3'){
                 this.setState({
-                    color:'rgb(73, 35, 223)',
-                    col:'rgb(251, 106, 106)',
+                    color:'#dad3d3',
+                    col:'#535353',
                     tempF: this.state.tempC
                 });
             }
-             if(this.state.color === 'rgb(73, 35, 223)' && this.state.col==='rgb(251, 106, 106)'){
+             if(this.state.color === '#dad3d3' && this.state.col==='#535353'){
                 this.setState({
-                    color:'rgb(251, 106, 106)',
-                    col:'rgb(73, 35, 223)',
+                    color:'#535353',
+                    col:'#dad3d3',
                     tempF: this.state.tempFnew
                 });
             }  
-            console.log(this.state.tempF);
-
+            // console.log(this.state.tempF);
     }
     render() {
       
